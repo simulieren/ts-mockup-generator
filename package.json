@@ -24,6 +24,7 @@
     "bundle": "npm run build && pkg . --out-dir ./exec/"
   },
   "devDependencies": {
+    "@types/puppeteer": "^1.20.2",
     "ava": "^2.2.0",
     "pkg": "^4.4.0",
     "rimraf": "^2.6.3",
@@ -31,6 +32,8 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "commander": "^2.20.0"
+    "commander": "^2.20.0",
+    "jimp": "^0.8.5",
+    "puppeteer": "^2.0.0"
   }
 }
