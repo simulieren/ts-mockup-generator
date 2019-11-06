@@ -1,13 +1,16 @@
 {
-  "name": "typescript-cli-starter",
+  "name": "ts-mockup-generator",
   "private": true,
   "version": "1.0.0",
-  "description": "A simple and zero-opinion typescript starter template for building cross-platform command line applications.",
-  "author": "Khalid Zoabi <kzoabi@outlook.com>",
+  "description": "👷‍♂️🖼✅ A simple mockup generator based on 💪 TS, 🖼 JIMP, and 👷‍♂️ Puppeteer.",
+  "author": "Simon Halimonov <hello@simonhalimonov.de>",
   "keywords": [
     "typescript",
     "cli",
-    "starter"
+    "puppeteer",
+    "jimp",
+    "screenshot",
+    "mockup"
   ],
   "license": "MIT",
   "main": "./dist/index.js",
