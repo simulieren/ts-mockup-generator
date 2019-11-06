@@ -64,5 +64,8 @@ typings/
 # next.js build output
 .next
 
-# 
+# Disallow default mockups folder
 mockups
+
+# Allow examples in git
+!examples/**
