@@ -12,7 +12,7 @@
 
 ## Example
 
-![iPad Pro Example](examples/ycombinator/mockups/ycombinator-ipad_pro landscape-1.png)
+![iPad Pro Example](https://rawcdn.githack.com/simulieren/ts-mockup-generator/fdff4c0c6fb570d182f2aedec088dcb1c5746270/examples/ycombinator/mockups/ycombinator-ipad_pro%20landscape-1.png)
 
 ## Idea
 
