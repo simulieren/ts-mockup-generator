@@ -11,8 +11,9 @@ const takeScreenshots = async ({
     folder?: string;
 }): Promise<string[]> => {
 	const selectedDevice = puppeteer.devices[device || "iPhone X"];
+    const args = ['--lang=en-US,en']
 
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch({args});
 
 	const screenshots = [];
 
@@ -40,8 +41,27 @@ const takeScreenshots = async ({
     let screenshotNumber = 1;
 
 	try {
-		const page = await browser.newPage();
-		await page.emulate(selectedDevice);
+        const page = await browser.newPage();
+        await page.emulate(selectedDevice);
+        
+        // Set the browser Language
+        await page.setExtraHTTPHeaders({
+            'Accept-Language': 'en'
+        });
+
+        // Set the language forcefully on javascript
+        await page.evaluateOnNewDocument(() => {
+            Object.defineProperty(navigator, "language", {
+                get: function() {
+                    return ["en-US"];
+                }
+            });
+            Object.defineProperty(navigator, "languages", {
+                get: function() {
+                    return ["en-US", "en"];
+                }
+            });
+        });
 
 		await page.goto(url, {
 			waitUntil: "networkidle2"
@@ -49,7 +69,7 @@ const takeScreenshots = async ({
         
         // Remove cookie dialog from DOM
         try {
-            await page.$$eval('#CybotCookiebotDialog', (el) => el[0].remove());
+            await page.$$eval('#CybotCookiebotDialog', (el) => el[0] ? el[0].remove() : undefined);
         } catch (error) {
             if (error) console.log(error)
         }
