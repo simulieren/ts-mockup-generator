@@ -10,6 +10,10 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/simulieren/ts-mockup-generator.svg?style=flat-square)
 
+## Example
+
+![iPad Pro Example](examples/ycombinator/mockups/ycombinator-ipad_pro landscape-1.png)
+
 ## Idea
 
 Got a website that you want to create a mockup for? Simply pass in the URL into this CLI and it will generate screenshots with a real browser and then put them into a mockup.
