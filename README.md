@@ -1,6 +1,6 @@
 # ts-mockup-generator
 
-👷‍♂️🖼✅ A simple mockup generator based on 💪 TS, 🖼 JIMP, and 👷‍♂️ Puppeteer.
+👷‍♂️🖼✅ A simple mockup generator based on 💪 TypeScript 3.7.2, 🖼 JIMP, and 👷‍♂️ Puppeteer.
 
 ![GitHub package.json dynamic](https://img.shields.io/github/package-json/keywords/simulieren/ts-mockup-generator.svg?style=flat-square)
 
