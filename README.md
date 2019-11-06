@@ -43,6 +43,11 @@ Select a device type to use for the screenshot generation process. You can get a
 #### -f --folder (optional)
 Default: `mockups`
 
+#### -D --debug (optional)
+Default: `false`
+
+Debug the CLI options.
+
 ## Development
 
 ### **dev**
