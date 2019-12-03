@@ -35,6 +35,10 @@ URL of site to use for mockup generation. The hostname will be used as the folde
 
 Example: `https://github.com/simulieren/ts-mockup-generator` will generate a folder with the name of `github` inside of the `mockup` folder.
 
+#### -s --scroll (optional)
+Default: `20`
+Increase the distance between screenshots. The browser is scrolled by using the keyboards arrow key.
+
 #### -S --skip-images (optional)
 Default: `false`
 Skip the screenshot generation process in Puppeteer. Use this if you already generated some images and want to skip to the mockup generation process.

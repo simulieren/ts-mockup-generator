@@ -12,14 +12,16 @@ program
 	.option("-u, --url [type]", "URL of the site")
 	.option("-d, --device [type]", "Select a device")
 	.option("-f, --folder [type]", "Select a folder")
+	.option("-s, --scroll [type]", "Steps to move between screenshots. More steps will increase the scroll distance between screenshots.")
 	.parse(process.argv);
 
 (async () => {
-	const { device, url, folder } = program;
+	const { device, url, folder, scroll = 20 } = program;
 	const hostname = new URL(url).hostname.split(".")[1];
 	let screenshots = [];
 
 	const devices = device || ["iPad Pro landscape", "iPhone X"];
+	
 
 	if (program.debug) console.log("Debug:", program.opts());
 
@@ -30,7 +32,8 @@ program
 			let newScreenshots = await takeScreenshots({
         device: device || "iPhone X",
         url: url,
-        folder
+		folder,
+		scroll
       });
       
       // Merge array of screenshots

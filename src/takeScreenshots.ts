@@ -4,11 +4,13 @@ import fs from "fs";
 const takeScreenshots = async ({
 	device,
     url,
-    folder = "mockups"
+    folder = "mockups",
+    scroll = 20
 }: {
 	device?: string;
     url: string;
     folder?: string;
+    scroll?: number;
 }): Promise<string[]> => {
 	const selectedDevice = puppeteer.devices[device || "iPhone X"];
     const args = ['--lang=en-US,en']
@@ -91,7 +93,7 @@ const takeScreenshots = async ({
 			console.log(`📸 Screenshot captured of: ${url}`);
             console.log(`🖼 Image filename: ${filename}`);
 
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < scroll; i++) {
                 await page.keyboard.press("ArrowDown");
             }
             
