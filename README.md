@@ -31,10 +31,11 @@ Got a website that you want to create a mockup for? Simply pass in the URL into 
 ts-mockup-generator --url https://github.com/simulieren/ts-mockup-generator
 ```
 
-npx
+npx 
 ```
 npx ts-mockup-generator --url https://github.com/simulieren/ts-mockup-generator
 ```
+Note: This will download about 112MB of Chromium for Puppeteer.
 
 ### Options
 
