@@ -1,7 +1,7 @@
 {
   "name": "ts-mockup-generator",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "👷‍♂️🖼✅ A simple mockup generator based on 💪 TypeScript, 🖼 JIMP, and 👷‍♂️ Puppeteer.",
   "author": "Simon Halimonov <hello@simonhalimonov.de>",
   "keywords": [
