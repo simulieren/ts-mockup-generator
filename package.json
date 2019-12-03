@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "ts-node ./src/cli.ts",
     "clean": "rimraf ./dist/ ./exec/",
-    "prepublish": "mv devices dist/devices",
+    "prepublish": "cp -R device dist/",
     "build": "npm run clean && tsc",
     "test": "npm run build && ava --verbose",
     "bundle": "npm run build && pkg . --out-dir ./exec/"
