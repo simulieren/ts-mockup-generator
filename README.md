@@ -25,6 +25,8 @@ Got a website that you want to create a mockup for? Simply pass in the URL into 
 - [ ] Add better folder structure
 - [ ] Add support for crawling multiple pages
 - [ ] Use a smaller version of puppeteer
+- [ ] Add image optimization for size
+- [ ] Add support for multiple processes using web workers
 
 ## Usage
 
