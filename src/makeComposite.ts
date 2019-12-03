@@ -1,5 +1,6 @@
 import Jimp from "jimp";
 import fs from "fs";
+import path from "path";
 
 const makeComposite = async ({
 	images = [],
@@ -42,8 +43,8 @@ const makeComposite = async ({
     console.log(`👷‍♂️ Start working on ${images.length} images ...`);
     let currentImageNumber = 0;
     
-    const iPhone_X = await Jimp.read(`device/Apple iPhone X Space Grey.png`);
-    const iPad = await Jimp.read(`device/Apple iPad Pro 13" Space Gray - Landscape.png`);
+    const iPhone_X = await Jimp.read(path.join(__dirname, `device/Apple iPhone X Space Grey.png`));
+    const iPad = await Jimp.read(path.join(__dirname, `device/Apple iPad Pro 13" Space Gray - Landscape.png`));
 
 	for (const image of images) {
         let newFile;
