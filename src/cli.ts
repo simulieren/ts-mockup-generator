@@ -18,7 +18,6 @@ program
 (async () => {
 	const { device, url, folder, scroll = 20 } = program;
 	const hostname = parse(url).hostname
-    console.log("TCL: hostname", hostname)
 	let screenshots = [];
 
 	const devices = device || ["iPad Pro landscape", "iPhone X"];
