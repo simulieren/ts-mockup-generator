@@ -20,7 +20,10 @@ Got a website that you want to create a mockup for? Simply pass in the URL into 
 
 ### Roadmap
 
-Add more devices (MacBook, Desktop, Browser windows, ...) and more CLI options to the script.
+- [ ] Add more devices (MacBook, Desktop, Browser windows, ...).
+- [ ] Add more CLI options.
+- [ ] Add better folder structure
+- [ ] Add support for crawling multiple pages
 
 ## Usage
 
@@ -101,3 +104,5 @@ Your shareable executables will be in the `./exec/` directory.
 ## Credits
 
 This is based on the [typescript-cli-starter](https://github.com/khalidx/typescript-cli-starter/) by [Khalid Zoabi](https://github.com/khalidx)
+
+Devices are by [FACEBOOK Design](https://facebook.design/devices).
