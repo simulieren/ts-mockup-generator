@@ -27,11 +27,17 @@ Got a website that you want to create a mockup for? Simply pass in the URL into 
 
 ## Usage
 
+Install locally:
+
 ```bash
+# Install
+npm i -g ts-mockup-generator
+
+# Run with a url
 ts-mockup-generator --url https://github.com/simulieren/ts-mockup-generator
 ```
 
-npx 
+npx
 ```
 npx ts-mockup-generator --url https://github.com/simulieren/ts-mockup-generator
 ```
