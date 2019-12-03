@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
 import fs from "fs";
+import { parse } from 'url';
 
 const takeScreenshots = async ({
 	device,
@@ -19,7 +20,7 @@ const takeScreenshots = async ({
 
 	const screenshots = [];
 
-    const hostname = new URL(url).hostname.split(".")[1];
+    const hostname = parse(url).hostname
     
     fs.stat(folder, function(err) {
 		if (!err) {

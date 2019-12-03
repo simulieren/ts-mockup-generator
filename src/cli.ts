@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+import { parse } from 'url';
 import program from "commander";
 
 import takeScreenshots from "./takeScreenshots";
@@ -17,7 +17,8 @@ program
 
 (async () => {
 	const { device, url, folder, scroll = 20 } = program;
-	const hostname = new URL(url).hostname.split(".")[1];
+	const hostname = parse(url).hostname
+    console.log("TCL: hostname", hostname)
 	let screenshots = [];
 
 	const devices = device || ["iPad Pro landscape", "iPhone X"];
