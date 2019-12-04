@@ -26,6 +26,7 @@ const takeScreenshots = async ({
 		if (!err) {
 			console.log(`🖼 Screenshots will be created at: ${folder}`);
 		} else if (err.code === "ENOENT") {
+            if (fs.existsSync(folder)) return;
             fs.mkdirSync(folder)
             console.log(`🆕 : 📁 New folder: ${folder}`)
 		}
@@ -35,6 +36,7 @@ const takeScreenshots = async ({
 		if (!err) {
 			console.log(`🖼 Screenshots will be created at: ${folder}/${hostname}`);
 		} else if (err.code === "ENOENT") {
+            if (fs.existsSync(`${folder}/${hostname}`)) return;
             fs.mkdirSync(`${folder}/${hostname}`)
             console.log(`🆕 : 📁 New folder: ${folder}/${hostname}`)
 		}
