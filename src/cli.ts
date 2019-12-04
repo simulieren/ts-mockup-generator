@@ -20,6 +20,7 @@ program
 	.parse(process.argv);
 
 (async () => {
+	console.time("Total")
 	const { device, url, folder = "mockups", scroll = 20 } = program;
 	const hostname = parse(url).hostname;
 	let screenshots: string[] = [];
@@ -30,6 +31,7 @@ program
 
 	if (program.skipImages) console.log("👉 Skipping images...");
 	if (!program.skipImages) {
+		console.time("Screenshots")
 		const promises = await devices.map(device =>
 			takeScreenshots({
 				device: device || "iPhone X",
@@ -41,8 +43,10 @@ program
 
 		screenshots = await Promise.all(promises);
 		console.log(`👷‍♂️: ✅ Finished creating screenshots for: ${device}`);
+		console.timeEnd("Screenshots")
 	}
 
+	console.time("Mockups")
 	console.log(`👷‍♂️ Starting mockups...`);
 	screenshots = fs.readdirSync(`${folder}/${hostname}`);
 	console.log(`🖼 Screenshots: ${screenshots.length}`);
@@ -80,5 +84,7 @@ program
 		makeComposite({ image: screenshot, hostname, folder })
 	);
 	await Promise.all(promises);
+	console.timeEnd("Mockups")
 	console.log(`👷‍♂️: ✅ All images created: ${screenshots.length}`);
+	console.timeEnd("Total")
 })();
