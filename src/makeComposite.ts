@@ -1,5 +1,7 @@
 import Jimp from "jimp";
 import path from "path";
+import { threadId } from "worker_threads";
+
 
 const makeComposite = async ({
 	image,
@@ -11,13 +13,7 @@ const makeComposite = async ({
 	folder?: string;
 }) => {
 	console.log(`👷‍♂️ Start working on ${image} ...`);
-
-	const iPhone_X = await Jimp.read(
-		path.join(__dirname, `device/Apple iPhone X Space Grey.png`)
-	);
-	const iPad = await Jimp.read(
-		path.join(__dirname, `device/Apple iPad Pro 13" Space Gray - Landscape.png`)
-	);
+	console.log(`👷‍♂️ This process is in thread: ${threadId}`);
 
 	let newFile;
 	const filePath = `${folder}/${hostname}/${image}`;
@@ -25,6 +21,10 @@ const makeComposite = async ({
 	const screenshot = await Jimp.read(filePath);
 
 	if (image.includes("iphone")) {
+		const iPhone_X = await Jimp.read(
+			path.join(__dirname, `device/Apple iPhone X Space Grey.png`)
+		);
+
 		let { width, height } = iPhone_X.bitmap;
 
 		newFile = await new Jimp(width, height, "rgba(0,0,0,0");
@@ -34,6 +34,10 @@ const makeComposite = async ({
 	}
 
 	if (image.includes("ipad")) {
+		const iPad = await Jimp.read(
+			path.join(__dirname, `device/Apple iPad Pro 13" Space Gray - Landscape.png`)
+		);
+
 		let { width, height } = iPad.bitmap;
 
 		newFile = await new Jimp(width, height, "rgba(0,0,0,0");
@@ -46,6 +50,8 @@ const makeComposite = async ({
 
 	await newFile.write(newFilePath);
 	console.log(`👷‍♂️ Image created: ${newFilePath}`);
+
+	return newFilePath
 };
 
 export default makeComposite;
