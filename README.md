@@ -22,6 +22,7 @@ Got a website that you want to create a mockup for? Simply pass in the URL into 
 
 - [ ] Add more devices (MacBook, Desktop, Browser windows, ...).
 - [ ] Add more CLI options.
+  - [x] Add wait option
 - [ ] Add better folder structure
 - [ ] Add support for crawling multiple pages
 - [ ] Use a smaller version of puppeteer
