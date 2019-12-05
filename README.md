@@ -27,6 +27,7 @@ Got a website that you want to create a mockup for? Simply pass in the URL into 
 - [ ] Use a smaller version of puppeteer
 - [ ] Add image optimization for size
 - [x] Add support for multiple processes multiple threads via worker threads 
+- [x] Run multiple instances of puppeteer in parallel
 
 ## Usage
 
