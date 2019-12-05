@@ -6,12 +6,14 @@ const takeScreenshots = async ({
 	device,
     url,
     folder = "mockups",
-    scroll = 20
+    scroll = 20,
+    wait = 0
 }: {
 	device?: string;
     url: string;
     folder?: string;
     scroll?: number;
+    wait? : number
 }): Promise<string[]> => {
 	const selectedDevice = puppeteer.devices[device || "iPhone X"];
     const args = ['--lang=en-US,en']
@@ -80,7 +82,7 @@ const takeScreenshots = async ({
         }
 
 		while (scrolling) {
-			await page.waitFor(300);
+			await page.waitFor(wait);
 
 			const filename = `${hostname}-${selectedDevice.name
 				.toLowerCase()
@@ -100,7 +102,7 @@ const takeScreenshots = async ({
                 await page.keyboard.press("ArrowDown");
             }
             
-            await page.waitFor(300);
+            await page.waitFor(wait);
             
             const reachedEnd = await page.evaluate(() => {
                 if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {

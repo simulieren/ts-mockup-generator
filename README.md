@@ -58,6 +58,10 @@ Example: `https://github.com/simulieren/ts-mockup-generator` will generate a fol
 Default: `20`
 Increase the distance between screenshots. The browser is scrolled by using the keyboards arrow key.
 
+#### -w --wait (optional)
+Default: `0`
+Wait in between screenshots and scrolling. This is useful when the page has got animations on scroll and you want to wait for them to finish before taking a screenshot.
+
 #### -S --skip-images (optional)
 Default: `false`
 Skip the screenshot generation process in Puppeteer. Use this if you already generated some images and want to skip to the mockup generation process.

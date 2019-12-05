@@ -17,6 +17,7 @@ program
 	.option("-D, --debug", "output extra debugging")
 	.option("-S, --skip-images", "skip images")
 	.option("-u, --url [type]", "URL of the site")
+	.option("-w, --wait [type]", "Wait time in ms between each screenshot")
 	.option("-d, --device [type]", "Select a device")
 	.option("-f, --folder [type]", "Select a folder")
 	.option(
@@ -58,7 +59,7 @@ async function makeCompositeWithWorker(array: string[], hostname, folder) {
 
 (async () => {
 	console.time("Total");
-	const { device, url, folder = "mockups", scroll = 20 } = program;
+	const { device, url, folder = "mockups", scroll = 20, wait = 0 } = program;
 	const hostname = parse(url).hostname;
 	let screenshots: string[] = [];
 
@@ -73,7 +74,8 @@ async function makeCompositeWithWorker(array: string[], hostname, folder) {
 				device: device || "iPhone X",
 				url: url,
 				folder,
-				scroll
+				scroll,
+				wait
 			})
 		);
 
