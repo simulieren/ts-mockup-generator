@@ -43,6 +43,6 @@
     "lodash": "^4.17.15",
     "lodash.chunk": "^4.2.0",
     "puppeteer": "^2.0.0",
-    "systeminformation": "^4.16.0"
+    "systeminformation": "^5.3.1"
   }
 }
